@@ -1,0 +1,466 @@
+        [
+            {
+            "id": 1,
+            "sportId": 1,
+            "repN": 15.00,
+            "setN": 4.00,
+            "registration": "2024-06-01",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 2,
+            "repN": 15.00,
+            "setN": 2.00,
+            "registration": "2024-06-01",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 8,
+            "repN": 1.00,
+            "setN": 1.00,
+            "registration": "2024-06-01",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 9,
+            "repN": 2.00,
+            "setN": 1.00,
+            "registration": "2024-06-01",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 1,
+            "repN": 15.00,
+            "setN": 4.00,
+            "registration": "2024-07-01",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 2,
+            "repN": 15.00,
+            "setN": 2.00,
+            "registration": "2024-07-01",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 8,
+            "repN": 1.00,
+            "setN": 1.00,
+            "registration": "2024-07-01",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 9,
+            "repN": 2.00,
+            "setN": 1.00,
+            "registration": "2024-07-01",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 1,
+            "repN": 15.00,
+            "setN": 8.00,
+            "registration": "2024-07-20",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 2,
+            "repN": 15.00,
+            "setN": 8.00,
+            "registration": "2024-07-20",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 3,
+            "repN": 15.00,
+            "setN": 8.00,
+            "registration": "2024-07-20",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+            
+            {
+            "id": 1,
+            "sportId": 4,
+            "repN": 15.00,
+            "setN": 8.00,
+            "registration": "2024-07-20",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 5,
+            "repN": 15.00,
+            "setN": 8.00,
+            "registration": "2024-07-20",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 1,
+            "repN": 20.00,
+            "setN": 5.00,
+            "registration": "2024-07-21",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 2,
+            "repN": 13.00,
+            "setN": 6.00,
+            "registration": "2024-07-21",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 3,
+            "repN": 13.00,
+            "setN": 6.00,
+            "registration": "2024-07-21",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 4,
+            "repN": 13.00,
+            "setN": 6.00,
+            "registration": "2024-07-21",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 5,
+            "repN": 13.00,
+            "setN": 6.00,
+            "registration": "2024-07-21",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 1,
+            "repN": 13.00,
+            "setN": 7.00,
+            "registration": "2024-07-22",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 2,
+            "repN": 20.00,
+            "setN": 6.00,
+            "registration": "2024-07-22",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 3,
+            "repN": 30.00,
+            "setN": 6.00,
+            "registration": "2024-07-22",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 4,
+            "repN": 12.00,
+            "setN": 10.00,
+            "registration": "2024-07-22",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 5,
+            "repN": 12.00,
+            "setN": 5.00,
+            "registration": "2024-07-22",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 6,
+            "repN": 10.00,
+            "setN": 10.00,
+            "registration": "2024-07-22",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 8,
+            "repN": 1.00,
+            "setN": 1.00,
+            "registration": "2024-07-22",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 1,
+            "repN": 13.00,
+            "setN": 8.00,
+            "registration": "2024-07-23",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 2,
+            "repN": 13.00,
+            "setN": 4.00,
+            "registration": "2024-07-23",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 4,
+            "repN": 12.00,
+            "setN": 10.00,
+            "registration": "2024-07-23",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 5,
+            "repN": 12.00,
+            "setN": 4.00,
+            "registration": "2024-07-23",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 9,
+            "repN": 1.00,
+            "setN": 1.00,
+            "registration": "2024-07-23",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 1,
+            "repN": 13.00,
+            "setN": 6.00,
+            "registration": "2024-07-25",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 2,
+            "repN": 20.00,
+            "setN": 4.00,
+            "registration": "2024-07-25",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 3,
+            "repN": 20.00,
+            "setN": 4.00,
+            "registration": "2024-07-25",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 4,
+            "repN": 12.00,
+            "setN": 5.00,
+            "registration": "2024-07-25",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 5,
+            "repN": 12.00,
+            "setN": 4.00,
+            "registration": "2024-07-25",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 6,
+            "repN": 10.00,
+            "setN": 10.00,
+            "registration": "2024-07-25",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 7,
+            "repN": 1.00,
+            "setN": 1.00,
+            "registration": "2024-07-25",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 8,
+            "repN": 1.00,
+            "setN": 1.00,
+            "registration": "2024-07-25",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 1,
+            "repN": 15.00,
+            "setN": 4.00,
+            "registration": "2024-07-27",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 2,
+            "repN": 15.00,
+            "setN": 2.00,
+            "registration": "2024-07-27",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 8,
+            "repN": 1.00,
+            "setN": 1.00,
+            "registration": "2024-07-27",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            },
+
+            {
+            "id": 1,
+            "sportId": 9,
+            "repN": 2.00,
+            "setN": 1.00,
+            "registration": "2024-07-27",
+            "weekR": null,
+            "monthR": null,
+            "yearR": null
+            }
+        ]
+
+
+

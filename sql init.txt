@@ -1,0 +1,72 @@
+DROP DATABASE routine_db;
+CREATE DATABASE routine_db;
+USE routine_db;
+
+
+CREATE TABLE log(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+status_message INT,	# 0-1
+record_date TIMESTAMP,
+http_status VARCHAR(255),
+request_type varchar(255),
+data LONGTEXT,
+user VARCHAR(50)
+);
+ALTER TABLE log MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+INSERT INTO log (status_message, record_date, http_status, request_type, data, user)
+VALUES (1, current_timestamp(), 'OK', 'GET', null, 'Bro');
+    
+CREATE TABLE book(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255),
+author VARCHAR(255),
+pages INT,
+publish_year INT,
+genre VARCHAR(255),
+start_date DATE,
+end_date DATE,
+repetition INT
+);
+ALTER TABLE book MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+INSERT INTO book (name, author, pages, publish_year, genre, start_date, end_date, repetition) VALUES 
+('Cam Inciler', 'Emeric Pressburger', 230, 1966, 'war-story', STR_TO_DATE('16.06.2024', '%d.%m.%Y'), STR_TO_DATE('15.07.2024', '%d.%m.%Y'), 1),
+('Deniz Feneri', 'Virginia Woolf', 215, 1927, 'adventure', STR_TO_DATE('16.07.2024', '%d.%m.%Y'), null, 0);
+
+CREATE TABLE sport(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255)
+);
+ALTER TABLE sport MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+INSERT INTO sport (name) VALUES 
+('Push-up'),			#1
+('Squat'),  			#2
+('Equestrian-Squat'),	#3
+('Biceps'),				#4
+('Triceps'),			#5
+('Bow-Draw'),			#6
+('Run'),				#7 -> rep is km
+('Wrist'),				#8 -> no reps nor sets its fixed 15*10
+('Swim'),				#9 -> no reps nor sets
+('Equestrianism');		#10
+
+CREATE TABLE sport_i(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+sport_id BIGINT,
+rep_n INT,
+set_n INT,
+registration date,
+week_r INT,
+month_r INT,
+year_r INT
+);
+ALTER TABLE sport_i MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+ALTER TABLE sport_i ADD CONSTRAINT FK_sport_i FOREIGN KEY (sport_id) REFERENCES sport(id);
+
+
+GRANT ALL PRIVILEGES ON routine_db.* TO 'myuser'@'localhost';
+FLUSH PRIVILEGES;
+COMMIT;
+
+SELECT DISTINCT week_r FROM sport_i WHERE sport_id=1;
+SELECT DISTINCT year_r FROM sport_i WHERE sport_id=1;
+SELECT * FROM sport_i WHERE sport_id=1 AND week_r = 30 AND year_r = 2024;
