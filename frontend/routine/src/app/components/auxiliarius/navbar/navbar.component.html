@@ -1,0 +1,17 @@
+<div   style="width:1000px; height:30px;"   >
+    <p-button label="Home" icon="pi pi-home" class="custom-button"         
+        (click)="navigate('/')"   (click) = "page_name_f('000000', 'Home')"></p-button>
+    <p-button label="Performance" icon="pi pi-home" class="custom-button2"  
+        (click)="navigate('/performance')"   (click) = "page_name_f('000001', 'Performance')"></p-button>
+    <p-button label="Data Registry"   class="custom-button3"               
+        (click)="navigate('/data_registry')" (click) = "page_name_f('000002', 'Data Registry')"></p-button>
+</div>
+<div   style="width:100vw; height:3vh; border: 2px solid; background-color:#6A8B8E;  font-size:15px; font-weight:bold; color:white;">
+    <div class="text-center"   style="display: inline-block; width:20vw; height:100%; background-color:#BACFDB; border-right: 2px solid black;">
+        {{pageCode}}
+     </div>
+     <div style="display: inline-block; height:100%;">
+        {{pageDescription}}
+     </div>
+</div>
+<div   style="width:1000px; height:5px;"></div>

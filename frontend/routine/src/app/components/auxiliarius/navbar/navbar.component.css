@@ -1,0 +1,25 @@
+::ng-deep .custom-button .p-button {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: white !important; /* Change the text color */
+    background-color: orangered !important; /* Change the background color */
+    height: 25px;
+  }
+
+  ::ng-deep .custom-button2 .p-button {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: white !important; /* Change the text color */
+    background-color: rgb(23, 116, 116) !important; /* Change the background color */
+    height: 25px;
+    margin-left: 5px;
+  }
+
+  ::ng-deep .custom-button3 .p-button {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: white !important; /* Change the text color */
+    background-color: green !important; /* Change the background color */
+    height: 25px;
+    margin-left: 5px;
+  }

@@ -1,0 +1,51 @@
+<div class="grid" style="margin-top:2vh; margin-left: 10vw; width: 80vw;;">
+    <div class="col-11" style="height:60vh;">
+        <div *ngIf="graphData && graphData.length > 0; else noData">
+            <p-chart type="bar" [data]="chartData" [options]="chartOptions" style="width: 100%; height: 60vh;"></p-chart>
+          </div>
+          <ng-template #noData>
+            <p>No data available.</p>
+          </ng-template>
+    </div>
+    <div class="col-1">
+        <p-button label="Push-Up"           [ngClass]="{'active-button-sportP': active1, 'custom-button-sportP': !active1}"        
+            (click)="activeSport(1)" ></p-button>
+        <p-button label="Squat"             [ngClass]="{'active-button-sportP': active2, 'custom-button-sportP': !active2}"       
+            (click)="activeSport(2)" ></p-button>
+        <p-button label="Equestrian-Squat"   [ngClass]="{'active-button-sportP': active3, 'custom-button-sportP': !active3}"       
+            (click)="activeSport(3)" ></p-button>
+        <p-button label="Biceps"             [ngClass]="{'active-button-sportP': active4, 'custom-button-sportP': !active4}"     
+            (click)="activeSport(4)" ></p-button>
+        <p-button label="Triceps"            [ngClass]="{'active-button-sportP': active5, 'custom-button-sportP': !active5}"        
+            (click)="activeSport(5)" ></p-button>
+        <p-button label="Bow-Draw"           [ngClass]="{'active-button-sportP': active6, 'custom-button-sportP': !active6}"          
+            (click)="activeSport(6)" ></p-button>
+        <p-button label="Run"                [ngClass]="{'active-button-sportP': active7, 'custom-button-sportP': !active7}"           
+            (click)="activeSport(7)" ></p-button>
+        <p-button label="Wrist"              [ngClass]="{'active-button-sportP': active8, 'custom-button-sportP': !active8}"         
+            (click)="activeSport(8)" ></p-button>
+        <p-button label="Swim"               [ngClass]="{'active-button-sportP': active9, 'custom-button-sportP': !active9}"         
+            (click)="activeSport(9)" ></p-button>
+        <p-button label="Equestrianism"      [ngClass]="{'active-button-sportP': active10, 'custom-button-sportP': !active10}"         
+            (click)="activeSport(10)" ></p-button>
+
+        <p-button label="Search"            class="custom-button-sportP3"      
+            (click)="search()" ></p-button>
+    </div>
+</div>
+
+<div style="margin-top: 2vh; margin-left: 10vw; width: 80vw;">
+    <p-button label="Days"             [ngClass]="{'active-button-sportP2': activeTime0, 'custom-button-sportP2': !activeTime0}"       
+        (click)="activeTimeLine(0)" ></p-button>
+    <p-button label="Weeks"            [ngClass]="{'active-button-sportP2': activeTime1, 'custom-button-sportP2': !activeTime1}"    
+        (click)="activeTimeLine(1)" ></p-button>
+    <p-button label="Months"           [ngClass]="{'active-button-sportP2': activeTime2, 'custom-button-sportP2': !activeTime2}"     
+        (click)="activeTimeLine(2)" ></p-button>
+    <p-button label="Years"            [ngClass]="{'active-button-sportP2': activeTime3, 'custom-button-sportP2': !activeTime3}"     
+        (click)="activeTimeLine(3)" ></p-button>
+</div>
+
+
+<div>
+    <li *ngFor="let item of graphData">{{item.attr0}} - {{item.attr1}}</li>
+</div>

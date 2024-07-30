@@ -1,0 +1,16 @@
+<div style="margin-top:5vh; margin-left: 35vw;">
+    <p-button label="Sport"   icon="pi pi-mars"     
+        [ngClass]="{'active-button-performance': sportActive, 'custom-button-performance': !sportActive}"        
+        (click)="activeComponent('sport')"></p-button>
+    <p-button label="Art"     icon="pi pi-headphones" 
+        [ngClass]="{'active-button-performance': artActive, 'custom-button-performance2': !artActive}"     
+        (click)="activeComponent('art')" ></p-button>
+    <p-button label="Project" icon="pi pi-hammer" 
+        [ngClass]="{'active-button-performance': projectActive, 'custom-button-performance3': !projectActive}"      
+        (click)="activeComponent('project')" ></p-button>
+</div>
+
+
+<app-sport-p    *ngIf = "sportActive"></app-sport-p>
+<app-art-p      *ngIf = "artActive"></app-art-p>
+<app-project-p  *ngIf = "projectActive"></app-project-p>
