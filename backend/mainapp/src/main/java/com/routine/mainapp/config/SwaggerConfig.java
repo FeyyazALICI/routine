@@ -16,3 +16,11 @@ public class SwaggerConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }
+
+
+
+/*
+ * There is no configuration for actuator. It can be reached via /actuator
+ * Just include below inside the properties
+ * management.endpoints.web.exposure.include=*
+ */

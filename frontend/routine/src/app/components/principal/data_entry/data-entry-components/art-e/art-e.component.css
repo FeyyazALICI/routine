@@ -1,0 +1,26 @@
+::ng-deep .p-dropdown {
+    width: 100%; /* Make the dropdown take full width */
+    max-width: 300px; /* Set a maximum width */
+    border-radius: 5px; /* Add rounded corners */
+    border: 2px solid #007bff; /* Add a custom border color */
+}
+::ng-deep .p-inputNumber {
+    width: 100%; /* Make the dropdown take full width */
+    max-width: 300px; /* Set a maximum width */
+    border-radius: 5px; /* Add rounded corners */
+    border: 2px solid #007bff; /* Add a custom border color */
+}
+
+::ng-deep .p-card {
+    margin-left: 35vw;
+    margin-top:2vh;
+}
+
+::ng-deep .custom-button-save .p-button {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: white !important; /* Change the text color */
+    background-color: rgb(15, 92, 92) !important; /* Change the background color */
+    height:     4vh;
+    width:      8vw;
+  }

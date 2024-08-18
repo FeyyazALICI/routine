@@ -15,22 +15,13 @@ user VARCHAR(50)
 ALTER TABLE log MODIFY COLUMN id BIGINT AUTO_INCREMENT;
 INSERT INTO log (status_message, record_date, http_status, request_type, data, user)
 VALUES (1, current_timestamp(), 'OK', 'GET', null, 'Bro');
-    
-CREATE TABLE book(
+
+CREATE TABLE dummy_job(
 id BIGINT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(255),
-author VARCHAR(255),
-pages INT,
-publish_year INT,
-genre VARCHAR(255),
-start_date DATE,
-end_date DATE,
-repetition INT
+record_date TIMESTAMP
 );
-ALTER TABLE book MODIFY COLUMN id BIGINT AUTO_INCREMENT;
-INSERT INTO book (name, author, pages, publish_year, genre, start_date, end_date, repetition) VALUES 
-('Cam Inciler', 'Emeric Pressburger', 230, 1966, 'war-story', STR_TO_DATE('16.06.2024', '%d.%m.%Y'), STR_TO_DATE('15.07.2024', '%d.%m.%Y'), 1),
-('Deniz Feneri', 'Virginia Woolf', 215, 1927, 'adventure', STR_TO_DATE('16.07.2024', '%d.%m.%Y'), null, 0);
+ALTER TABLE dummy_job MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+INSERT INTO dummy_job (record_date) VALUES (current_timestamp());
 
 CREATE TABLE sport(
 id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -49,24 +40,60 @@ INSERT INTO sport (name) VALUES
 ('Swim'),				#9 -> no reps nor sets
 ('Equestrianism');		#10
 
-CREATE TABLE sport_i(
+CREATE TABLE category(
 id BIGINT AUTO_INCREMENT PRIMARY KEY,
-sport_id BIGINT,
-rep_n INT,
-set_n INT,
-registration date,
-week_r INT,
-month_r INT,
-year_r INT
+name VARCHAR(255)
 );
-ALTER TABLE sport_i MODIFY COLUMN id BIGINT AUTO_INCREMENT;
-ALTER TABLE sport_i ADD CONSTRAINT FK_sport_i FOREIGN KEY (sport_id) REFERENCES sport(id);
+ALTER TABLE category MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+INSERT INTO category (name) VALUES 
+('art'),
+('sport'),
+('work');
+
+CREATE TABLE art(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255)
+);
+ALTER TABLE art MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+INSERT INTO art (name) VALUES 
+('book'),
+('latin'),
+('movie_and_theater'),
+('music');
+
+CREATE TABLE project(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255)
+);
+ALTER TABLE project MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+INSERT INTO project (name) VALUES 
+('java'),
+('angular'),
+('python'),
+('fullstack');
+
+CREATE TABLE dailyiteration(
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+category_id 			BIGINT,
+sport_id 				BIGINT,
+project_id 				BIGINT,
+art_id 					BIGINT,
+min_or_pages_or_rep 	DECIMAL,
+registration 			date,
+week_r 					INT,
+month_r 				INT,
+year_r 					INT
+);
+ALTER TABLE dailyiteration MODIFY COLUMN id BIGINT AUTO_INCREMENT;
+ALTER TABLE dailyiteration ADD CONSTRAINT FK_dailyiteration_category_id FOREIGN KEY (category_id) 	REFERENCES category(id);
+ALTER TABLE dailyiteration ADD CONSTRAINT FK_dailyiteration_sport_id 	FOREIGN KEY (sport_id) 		REFERENCES sport(id);
+ALTER TABLE dailyiteration ADD CONSTRAINT FK_dailyiteration_project_id  FOREIGN KEY (project_id) 	REFERENCES project(id);
+ALTER TABLE dailyiteration ADD CONSTRAINT FK_dailyiteration_art_id 		FOREIGN KEY (art_id) 		REFERENCES art(id);
 
 
 GRANT ALL PRIVILEGES ON routine_db.* TO 'myuser'@'localhost';
 FLUSH PRIVILEGES;
 COMMIT;
 
-SELECT DISTINCT week_r FROM sport_i WHERE sport_id=1;
-SELECT DISTINCT year_r FROM sport_i WHERE sport_id=1;
-SELECT * FROM sport_i WHERE sport_id=1 AND week_r = 30 AND year_r = 2024;
+
+SELECT * FROM ROUTINE_DB.dailyiteration ORDER BY id DESC ;

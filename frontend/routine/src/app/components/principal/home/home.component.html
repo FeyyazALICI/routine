@@ -1,1 +1,28 @@
-<p>home works!</p>
+<div style="margin-left:25vw;">
+    <h1 style="color:red">Project Structure</h1>
+    <p>This project uses 2 springboot backend api, 'def' api is connected to simple definition tables in the database (such as sport definiton table).</p>
+    <p>'mainapp' is connected to iteration type tables which performs dynamic operations such as inserting, deleting, etc.</p>
+    <p>'def' & 'mainapp' mini-services are independently of each other. Both uses a self-made library.</p>
+    <p></p>
+    <p>'sharedLibrary' is a jar project acts as library. It only has 3 classes:</p>
+    <li>Constants -> for decided fixed constants</li>
+    <li>DateConverter -> for fixed date conversion</li>
+    <li>EntityToDaoMapper -> converts given entity to dao pojo classes</li>
+    <p></p>
+    <p>This project uses service-response instead of sending the data directly.</p>
+    <p>In service-responses, I have avoided putting entity objects directly inside data attribute, instead I have turned them into 'dao's of specific type</p>
+    <img alt="Card" [src] = "description_img" style="width:50vw; height: 25vh;">
+    <h1 style="color:red; margin-top:5vh;">BackEnd Structure</h1>
+    <h2><i>Swagger</i></h2>
+    <li (click) = "navigateOutsideF('http://localhost:9001/swagger-ui/index.html')"
+        style="cursor:pointer"><u>Def Api Swagger</u></li>
+    <li (click) = "navigateOutsideF('http://localhost:9000/swagger-ui/index.html')"
+        style="cursor:pointer"><u>MainApp Api Swagger</u></li>
+    <h2><i>Actuator</i></h2>
+    <li (click) = "navigateOutsideF('http://localhost:9000/actuator')"
+        style="cursor:pointer"><u>Def Api Actuator</u></li>
+    <li (click) = "navigateOutsideF('http://localhost:9001/actuator')"
+        style="cursor:pointer"><u>MainApp Api Actuator</u></li>
+</div>
+
+

@@ -1,0 +1,35 @@
+::ng-deep .custom-button-performance .p-button {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: white !important; /* Change the text color */
+    background-color: darkblue !important; /* Change the background color */
+    height: 25px;
+    margin-left: 1vw;
+  }
+ 
+  ::ng-deep .custom-button-performance2 .p-button {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: white !important; /* Change the text color */
+    background-color: orange !important; /* Change the background color */
+    height: 25px;
+    margin-left: 1vw;
+  }
+
+  ::ng-deep .custom-button-performance3 .p-button {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: white !important; /* Change the text color */
+    background-color: green !important; /* Change the background color */
+    height: 25px;
+    margin-left: 1vw;
+  }
+
+  ::ng-deep .active-button-performance .p-button {
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: black !important; /* Change the text color */
+    background-color: cyan !important; /* Change the background color */
+    height: 25px;
+    margin-left: 1vw;
+  }

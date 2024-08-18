@@ -43,9 +43,7 @@
         (click)="activeTimeLine(2)" ></p-button>
     <p-button label="Years"            [ngClass]="{'active-button-sportP2': activeTime3, 'custom-button-sportP2': !activeTime3}"     
         (click)="activeTimeLine(3)" ></p-button>
+    <p-button label="Total"            [ngClass]="{'active-button-sportP2': activeTime4, 'custom-button-sportP2': !activeTime4}"     
+        (click)="activeTimeLine(4)" ></p-button>
 </div>
 
-
-<div>
-    <li *ngFor="let item of graphData">{{item.attr0}} - {{item.attr1}}</li>
-</div>

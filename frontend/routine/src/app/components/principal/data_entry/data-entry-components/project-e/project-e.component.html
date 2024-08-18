@@ -1,0 +1,37 @@
+<p-card header="Project Data Entry" 
+    subheader="Tē ipsum ad altiōrem nōrmam tene quam quisquam alius exspectet. Numquam tibi ignōsce. 
+    Et cum alius peccet, statim cōgitā, 'Num ego quoque hoc faciam?'" 
+    [style]="{width: '360px'}" styleClass="p-card-shadow">
+    <img alt="Card" [src] = "selected_img" style="width:350px; height: 400px;">
+    <p-dropdown 
+    (click)="image_f()"
+    [options]="distinctTypes" 
+    [(ngModel)]="selectedType"
+    [optionLabel]="'name'"
+    [optionValue]="'id'"
+    [checkmark]="true" 
+    [showClear]="true" 
+    placeholder="Select a Project Type" 
+    [autoDisplayFirst]="false">
+</p-dropdown>
+    <ng-template pTemplate="footer">
+        <p-button label="Save"            class="custom-button-save"      
+            (click)="search()" ></p-button>
+    </ng-template>
+    <div style="height: 2vh;"></div>
+    <p-inputNumber 
+        inputId="integeronly"
+        [showButtons]="true"
+        [(ngModel)]="kpi"
+        min="0" />
+    <div style="height: 2vh;"></div>
+    <p-dropdown 
+        [options]="time_list" 
+        [(ngModel)]="selected_time"
+        [checkmark]="true" 
+        [showClear]="true" 
+        placeholder="Select action day!" 
+        [autoDisplayFirst]="false">
+    </p-dropdown>
+</p-card>
+

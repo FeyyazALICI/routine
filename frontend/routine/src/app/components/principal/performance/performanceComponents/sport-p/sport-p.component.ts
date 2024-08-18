@@ -14,6 +14,8 @@ import { DoubleAttrDao } from '../../../../../models_and_services/models/dao/Dou
 import { DoubleAttrNumericDao } from '../../../../../models_and_services/models/dao/DoubleAttrNumericDao';
 import { ChartModule } from 'primeng/chart';  // Import ChartModule
 import { DoubleAttrDateDao } from '../../../../../models_and_services/models/dao/DoubleAttrDateDao';
+import { TrippleAttrNumericDao } from '../../../../../models_and_services/models/dao/TrippleAttrNumericDao';
+import { Constants } from '../../../../../models_and_services/common_constants/Constants';
 
 @Component({
   selector: 'app-sport-p',
@@ -50,7 +52,7 @@ export class SportPComponent implements OnInit {
   activeTime1: boolean = false;
   activeTime2: boolean = false;
   activeTime3: boolean = false;
-
+  activeTime4: boolean = false;
 
   chartData: any;
   graphData: DoubleAttrDateDao[];
@@ -95,6 +97,7 @@ export class SportPComponent implements OnInit {
     this.activeTime1 = false;
     this.activeTime2 = false;
     this.activeTime3 = false;
+    this.activeTime4 = false;
   }
 
   activeTimeLine(entry: number) {
@@ -104,6 +107,7 @@ export class SportPComponent implements OnInit {
       case 1: this.activeTime1 = true; break;
       case 2: this.activeTime2 = true; break;
       case 3: this.activeTime3 = true; break;
+      case 4: this.activeTime4 = true; break;
     }
     this.selectedTime = entry;
   }
@@ -117,8 +121,8 @@ export class SportPComponent implements OnInit {
     if (this.selectedSport == null || this.selectedTime == null) {
       this.toastrSer.showError("Both Sport & Time Constraints Should be Selected!");
     } else {
-      let data = new DoubleAttrNumericDao(this.selectedSport, this.selectedTime);
-      this.apiSer.postSportPerformance(data).subscribe(
+      let data = new TrippleAttrNumericDao(Constants.sport, this.selectedSport, this.selectedTime);
+      this.apiSer.performance(data).subscribe(
         (response: any) => {
           this.graphData = response.data.map((item: DoubleAttrDao) => ({
             attr0: this.dateFormatterF(item.attr0),

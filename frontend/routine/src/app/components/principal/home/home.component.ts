@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  description_img:string = "assets/image/home/description.png";
+
+  navigateOutsideF(entry: string) {
+    window.open(entry, '_blank');
+  }
 }
