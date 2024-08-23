@@ -1,0 +1,10 @@
+
+Purpose of the Spring Cloud Config Server
+The Spring Cloud Config Server provides centralized external configuration for distributed systems. It allows you to manage configuration files for all your microservices from a central place. Instead of hardcoding configurations within each microservice, you store these configurations in a centralized repository (like Git), and the Config Server provides these configurations to each microservice at runtime.
+
+
+
+Key benefits:
+Centralized Management: Manage configurations for all environments (e.g., dev, test, prod) in one place.
+Dynamic Configuration Updates: You can change configuration properties without redeploying your services. The Config Server can push the changes to your microservices.
+Version Control: Storing configurations in a Git repository allows you to track changes and roll back if necessary.

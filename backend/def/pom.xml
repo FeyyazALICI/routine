@@ -8,11 +8,11 @@
 		<version>3.3.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<groupId>com.routine</groupId>
+	<artifactId>def</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Definition Service Project</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -112,6 +112,12 @@
 	<version>0.0.5-SNAPSHOT</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+    <version>3.3.2</version>
+</dependency>
 
 
 	</dependencies>
