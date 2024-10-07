@@ -2,12 +2,7 @@
     <h1 style="color:red">Project Structure</h1>
     <p>This project uses 2 springboot backend api, 'def' api is connected to simple definition tables in the database (such as sport definiton table).</p>
     <p>'mainapp' is connected to iteration type tables which performs dynamic operations such as inserting, deleting, etc.</p>
-    <p>'def' & 'mainapp' mini-services are independently of each other. Both uses a self-made library.</p>
-    <p></p>
-    <p>'sharedLibrary' is a jar project acts as library. It only has 3 classes:</p>
-    <li>Constants -> for decided fixed constants</li>
-    <li>DateConverter -> for fixed date conversion</li>
-    <li>EntityToDaoMapper -> converts given entity to dao pojo classes</li>
+    <p>'def' & 'mainapp' mini-services are independently of each other.</p>
     <p></p>
     <p>This project uses service-response instead of sending the data directly.</p>
     <p>In service-responses, I have avoided putting entity objects directly inside data attribute, instead I have turned them into 'dao's of specific type</p>
