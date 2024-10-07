@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.routine.mainapp.common.dao.DoubleAttrDao;
 import com.routine.mainapp.common.serviceResponse.ServiceResponse;
 import com.routine.mainapp.common.serviceResponse.ServiceResponseStandardized;
+import com.routine.mainapp.dateConverter.DateConverter;
 import com.routine.mainapp.iterationOps.entity.DailyIteration;
 import com.routine.mainapp.iterationOps.repository.DailyIterationREPO;
 
@@ -15,7 +16,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import sharedlibrary.DateConverter;
+// importing libraries
+// import sharedlibrary.DateConverter;
 
 @Service
 public class MonthlyPService {
@@ -25,6 +27,8 @@ public class MonthlyPService {
     @Autowired
     private ServiceResponseStandardized spz;
     
+    DateConverter dateConverter = new DateConverter();
+
     public ServiceResponse artMonthlyP(Long category, Long subCategory,  HttpServletRequest request){
         try{
             List<Integer> distinctMonths = null;
@@ -39,7 +43,7 @@ public class MonthlyPService {
                             this.dailyIterationREPO.findByCategoryIdAndArtIdAndMonthRAndYearR(category, subCategory, month, year);
                         if(monthlyRows!=null && !monthlyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertMonthToDate(year, month)   );
+                            itemToAdd.setAttr0(   dateConverter.convertMonthToDate(year, month)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : monthlyRows) {
@@ -73,7 +77,7 @@ public class MonthlyPService {
                             this.dailyIterationREPO.findByCategoryIdAndSportIdAndMonthRAndYearR(category, subCategory, month, year);
                         if(monthlyRows!=null && !monthlyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertMonthToDate(year, month)   );
+                            itemToAdd.setAttr0(   dateConverter.convertMonthToDate(year, month)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : monthlyRows) {
@@ -107,7 +111,7 @@ public class MonthlyPService {
                             this.dailyIterationREPO.findByCategoryIdAndProjectIdAndMonthRAndYearR(category, subCategory, month, year);
                         if(monthlyRows!=null && !monthlyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertMonthToDate(year, month)   );
+                            itemToAdd.setAttr0(   dateConverter.convertMonthToDate(year, month)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : monthlyRows) {

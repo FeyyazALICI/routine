@@ -1,0 +1,14 @@
+/ROUTINE
+	/backend
+		/cloudconfig - microservice
+		/config-repo
+			/def
+				application.properties
+			/mainapp
+				application.properties
+		/def - microservice
+		/library
+		/mainapp - microservice
+		/cloudconfig - microservice
+	/frontend
+	.git

@@ -7,17 +7,22 @@ import java.util.Calendar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.routine.mainapp.common.constants.Constants;
 import com.routine.mainapp.iterationOps.entity.DailyIteration;
 import com.routine.mainapp.iterationOps.repository.DailyIterationREPO;
 import com.routine.mainapp.iterationOps.service.dao.SaveSingleEntityAngularDao;
 
 import jakarta.transaction.Transactional;
-import sharedlibrary.Constants;
+
+// importing libraries
+// import sharedlibrary.Constants;
 
 @Service
 public class SingleRegistrationService {
     @Autowired
     private DailyIterationREPO dailyIterationREPO;
+
+    Constants constants = new Constants();
 
         // Insert single entity via angular
     @Transactional
@@ -39,9 +44,9 @@ public class SingleRegistrationService {
         cal.add(Calendar.DAY_OF_MONTH, -1); // day before
         Date dayBeforeYesterday = new Date(cal.getTimeInMillis());
         // deciding time
-        if(timeLine==Constants.TODAY){
+        if(timeLine==constants.TODAY){
             dataToSave.setRegistration(today);
-        }else if(timeLine==Constants.YESTERDAY){
+        }else if(timeLine==constants.YESTERDAY){
             dataToSave.setRegistration(yesterday);
         }else{
             dataToSave.setRegistration(dayBeforeYesterday);

@@ -3,6 +3,7 @@ package com.routine.mainapp.iterationOps.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.routine.mainapp.common.constants.Constants;
 import com.routine.mainapp.common.dao.TrippleAttrNumericDao;
 import com.routine.mainapp.common.logStandart.interfaces.LogInterface;
 import com.routine.mainapp.common.serviceResponse.ServiceResponse;
@@ -25,7 +26,7 @@ import java.util.Calendar;
 import java.util.List;
 
 // libraries
-import sharedlibrary.Constants;
+// import sharedlibrary.Constants;
 
 @Service
 public class MainService {
@@ -122,15 +123,16 @@ public class MainService {
         Long category       = data.getAttr0();
         Long subCategory    = data.getAttr1();
         int timeId          = data.getAttr2();
-        if (timeId == Constants.DAILY) {
+        Constants constants = new Constants();
+        if (timeId == constants.DAILY) {
             return this.dailyPService.dailyP(category, subCategory, request);
-        }else if (timeId == Constants.WEEKLY) {
+        }else if (timeId == constants.WEEKLY) {
             return this.weeklyPService.weeklyP(category, subCategory, request);
-        }else if (timeId == Constants.MONTHLY) {
+        }else if (timeId == constants.MONTHLY) {
             return this.monthlyPService.monthlyP(category, subCategory, request);
-        }else if (timeId == Constants.YEARLY) {
+        }else if (timeId == constants.YEARLY) {
             return this.yearlyPService.yearlyP(category, subCategory, request);
-        }else if (timeId == Constants.TOTAL) {
+        }else if (timeId == constants.TOTAL) {
             return this.totalPService.totalP(category, subCategory, request);
         }
         return null;

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.routine.mainapp.common.dao.DoubleAttrNumericDao;
 import com.routine.mainapp.common.dao.TrippleAttrNumericDao;
 import com.routine.mainapp.common.serviceResponse.ServiceResponse;
 import com.routine.mainapp.iterationOps.entity.DailyIteration;
@@ -30,7 +29,7 @@ public class MainController {
         return mainService.getAllData(request);
     }
     @PostMapping                // save list of entities
-    public ServiceResponse insertListSPORTI(@RequestBody List<DailyIteration> data ,HttpServletRequest request){
+    public ServiceResponse saveList(@RequestBody List<DailyIteration> data ,HttpServletRequest request){
         return mainService.saveList(data, request);
     }
     @PostMapping("/saveSingle")

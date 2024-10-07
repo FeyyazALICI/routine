@@ -1,5 +1,5 @@
-DROP DATABASE routine_db;
-CREATE DATABASE routine_db;
+
+CREATE DATABASE IF NOT EXISTS routine_db;
 USE routine_db;
 
 
@@ -90,10 +90,8 @@ ALTER TABLE dailyiteration ADD CONSTRAINT FK_dailyiteration_sport_id 	FOREIGN KE
 ALTER TABLE dailyiteration ADD CONSTRAINT FK_dailyiteration_project_id  FOREIGN KEY (project_id) 	REFERENCES project(id);
 ALTER TABLE dailyiteration ADD CONSTRAINT FK_dailyiteration_art_id 		FOREIGN KEY (art_id) 		REFERENCES art(id);
 
-
-GRANT ALL PRIVILEGES ON routine_db.* TO 'myuser'@'localhost';
+DROP USER IF EXISTS 'myuser'@'%';
+CREATE USER 'myuser'@'%' IDENTIFIED BY 'Light80s!';
+GRANT ALL PRIVILEGES ON routine_db.* TO 'myuser'@'%';
 FLUSH PRIVILEGES;
 COMMIT;
-
-
-SELECT * FROM ROUTINE_DB.dailyiteration ORDER BY id DESC ;

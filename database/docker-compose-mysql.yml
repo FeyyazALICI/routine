@@ -1,0 +1,16 @@
+# docker-compose-mysql.yml
+version: '3.8'
+
+services:
+  mysql:
+    build: .  # Build the image using the Dockerfile in the current directory
+    image: routine_db_dockerized_img  # Custom image name
+    container_name: routine_db_dockerized_container  # Set your desired container name
+    ports:
+      - "4000:3306"
+    networks:
+      - my_custom_network
+
+networks:
+  my_custom_network:
+    external: true

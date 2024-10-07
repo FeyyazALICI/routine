@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  springboot:
+    build:
+      context: .  # Use the current directory for the build context
+      dockerfile: Dockerfile  # Specify the name of the Dockerfile
+    container_name: springboot-container-main
+    ports:
+      - "9000:9000"
+    networks:
+      - my_custom_network  # Use the same network as the MySQL container
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://routine_db_dockerized_container:3306/routine_db  # Use the MySQL container name directly
+      SPRING_DATASOURCE_USERNAME: myuser
+      SPRING_DATASOURCE_PASSWORD: Light80s!
+
+networks:
+  my_custom_network:
+    external: true

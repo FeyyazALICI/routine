@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.routine.mainapp.common.dao.DoubleAttrDao;
 import com.routine.mainapp.common.serviceResponse.ServiceResponse;
 import com.routine.mainapp.common.serviceResponse.ServiceResponseStandardized;
+import com.routine.mainapp.dateConverter.DateConverter;
 import com.routine.mainapp.iterationOps.entity.DailyIteration;
 import com.routine.mainapp.iterationOps.repository.DailyIterationREPO;
 
@@ -15,7 +16,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import sharedlibrary.DateConverter;
+// importing libraries
+// import sharedlibrary.DateConverter;
 
 @Service
 public class YearlyPService {
@@ -24,6 +26,8 @@ public class YearlyPService {
     @Autowired
     private ServiceResponseStandardized spz;
     
+    DateConverter dateConverter = new DateConverter();
+
     public ServiceResponse artYearlyP(Long category, Long subCategory,  HttpServletRequest request){
         try{
             List<Integer> distinctYears = null;
@@ -35,7 +39,7 @@ public class YearlyPService {
                             this.dailyIterationREPO.findByCategoryIdAndArtIdAndYearR(category, subCategory, year);
                         if(yearlyRows!=null && !yearlyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertYearToDate(year)   );
+                            itemToAdd.setAttr0(   dateConverter.convertYearToDate(year)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : yearlyRows) {
@@ -66,7 +70,7 @@ public class YearlyPService {
                             this.dailyIterationREPO.findByCategoryIdAndSportIdAndYearR(category, subCategory, year);
                         if(yearlyRows!=null && !yearlyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertYearToDate(year)   );
+                            itemToAdd.setAttr0(   dateConverter.convertYearToDate(year)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : yearlyRows) {
@@ -97,7 +101,7 @@ public class YearlyPService {
                             this.dailyIterationREPO.findByCategoryIdAndProjectIdAndYearR(category, subCategory, year);
                         if(yearlyRows!=null && !yearlyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertYearToDate(year)   );
+                            itemToAdd.setAttr0(   dateConverter.convertYearToDate(year)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : yearlyRows) {

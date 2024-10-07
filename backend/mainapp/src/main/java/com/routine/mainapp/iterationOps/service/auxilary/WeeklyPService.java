@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.routine.mainapp.common.dao.DoubleAttrDao;
 import com.routine.mainapp.common.serviceResponse.ServiceResponse;
 import com.routine.mainapp.common.serviceResponse.ServiceResponseStandardized;
+import com.routine.mainapp.dateConverter.DateConverter;
 import com.routine.mainapp.iterationOps.entity.DailyIteration;
 import com.routine.mainapp.iterationOps.repository.DailyIterationREPO;
 
@@ -15,7 +16,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import sharedlibrary.DateConverter;
+// importing libraries
+// import sharedlibrary.DateConverter;
 
 @Service
 public class WeeklyPService {
@@ -25,6 +27,7 @@ public class WeeklyPService {
     @Autowired
     private ServiceResponseStandardized spz;
     
+    DateConverter dateConverter = new DateConverter();
     public ServiceResponse artWeeklyP(Long category, Long subCategory,  HttpServletRequest request){
         try{
             List<Integer> distinctWeeks = null;
@@ -41,7 +44,7 @@ public class WeeklyPService {
                             this.dailyIterationREPO.findByCategoryIdAndArtIdAndWeekRAndYearR(category, subCategory, week, year);
                         if(weeklyRows!=null && !weeklyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertWeekToDate(year, week)   );
+                            itemToAdd.setAttr0(   dateConverter.convertWeekToDate(year, week)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : weeklyRows) {
@@ -76,7 +79,7 @@ public class WeeklyPService {
                             this.dailyIterationREPO.findByCategoryIdAndSportIdAndWeekRAndYearR(category, subCategory, week, year);
                         if(weeklyRows!=null && !weeklyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertWeekToDate(year, week)   );
+                            itemToAdd.setAttr0(   dateConverter.convertWeekToDate(year, week)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : weeklyRows) {
@@ -111,7 +114,7 @@ public class WeeklyPService {
                             this.dailyIterationREPO.findByCategoryIdAndProjectIdAndWeekRAndYearR(category, subCategory, week, year);
                         if(weeklyRows!=null && !weeklyRows.isEmpty()){
                             DoubleAttrDao itemToAdd = new DoubleAttrDao();
-                            itemToAdd.setAttr0(   DateConverter.convertWeekToDate(year, week)   );
+                            itemToAdd.setAttr0(   dateConverter.convertWeekToDate(year, week)   );
 
                             BigDecimal kpi = BigDecimal.ZERO; 
                             for (DailyIteration e : weeklyRows) {

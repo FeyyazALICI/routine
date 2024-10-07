@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.routine.def.common.daoMapper.EntityToDaoMapper;
 import com.routine.def.common.serviceResponse.ServiceResponse;
 import com.routine.def.common.serviceResponse.ServiceResponseStandardized;
 import com.routine.def.definitionOps.entity.Art;
@@ -20,8 +21,6 @@ import com.routine.def.definitionOps.service.dao.SportDao;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-//importing self made libraries
-import sharedlibrary.EntityToDaoMapper;
 
 @Service
 public class NameListService {
@@ -41,8 +40,9 @@ public class NameListService {
             List<Sport> data =  this.sportRepo.findAll();
             List<SportDao> dataDao = new ArrayList<>();
             if(data!=null && !data.isEmpty()){
+                EntityToDaoMapper entityToDaoMapper = new EntityToDaoMapper();
                 for(Sport e: data){
-                    SportDao daoItem = EntityToDaoMapper.convertToDao(e, SportDao.class);
+                    SportDao daoItem = entityToDaoMapper.convertToDao(e, SportDao.class);
                     dataDao.add(daoItem);
                 }
             }
@@ -58,8 +58,9 @@ public class NameListService {
             List<Project> data =  this.projectRepo.findAll();
             List<ProjectDao> dataDao = new ArrayList<>();
             if(data!=null && !data.isEmpty()){
+                EntityToDaoMapper entityToDaoMapper = new EntityToDaoMapper();
                 for(Project e: data){
-                    ProjectDao daoItem = EntityToDaoMapper.convertToDao(e, ProjectDao.class);
+                    ProjectDao daoItem = entityToDaoMapper.convertToDao(e, ProjectDao.class);
                     dataDao.add(daoItem);
                 }
             }
@@ -75,8 +76,9 @@ public class NameListService {
             List<Art> data =  this.artRepo.findAll();
             List<ArtDao> dataDao = new ArrayList<>();
             if(data!=null && !data.isEmpty()){
+                EntityToDaoMapper entityToDaoMapper = new EntityToDaoMapper();
                 for(Art e: data){
-                    ArtDao daoItem = EntityToDaoMapper.convertToDao(e, ArtDao.class);
+                    ArtDao daoItem = entityToDaoMapper.convertToDao(e, ArtDao.class);
                     dataDao.add(daoItem);
                 }
             }
