@@ -5,7 +5,7 @@ docker network create my_custom_network
 docker-compose -f docker-compose-mysql.yml up -d
 
 # checking whether the database is correctly running in a container
-docker exec -it mysql-container mysql -u myuser -p
+docker exec -it routine_db_dockerized_container mysql -u myuser -p
 USE routine_db;
 SELECT * FROM log;
 
@@ -14,4 +14,4 @@ docker-compose -f docker-compose-springboot-def.yml up --build -d
 # running spring-boot | main micro-service
 docker-compose -f docker-compose-springboot-main.yml up --build -d
 
-# do not forget to populate dockerized database through http://localhost:9000/main
+# do not forget to populate dockerized database through http://localhost:9000/main  -> POST
