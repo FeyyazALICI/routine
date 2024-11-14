@@ -31,24 +31,38 @@ import java.util.List;
 @Service
 public class MainService {
     
-    @Autowired
-    private DailyIterationREPO dailyIterationREPO;
-    @Autowired
-    private DailyPService dailyPService;
-    @Autowired
-    private WeeklyPService weeklyPService;
-    @Autowired
-    private MonthlyPService monthlyPService;
-    @Autowired
-    private YearlyPService yearlyPService;
-    @Autowired
-    private TotalPService totalPService;
-    @Autowired
-    private SingleRegistrationService singleRegistrationService;
-    @Autowired
-    private ServiceResponseStandardized spz;
+    private final DailyIterationREPO dailyIterationREPO;
+    private final DailyPService dailyPService;
+    private final WeeklyPService weeklyPService;
+    private final MonthlyPService monthlyPService;
+    private final YearlyPService yearlyPService;
+    
+    private final TotalPService totalPService;
+    private final SingleRegistrationService singleRegistrationService;
+    private final ServiceResponseStandardized spz;
 
+    @Autowired
+    public MainService(
+        DailyIterationREPO dailyIterationREPO,
+        DailyPService dailyPService,
+        WeeklyPService weeklyPService,
+        MonthlyPService monthlyPService,
+        YearlyPService yearlyPService,
 
+        TotalPService totalPService,
+        SingleRegistrationService singleRegistrationService,
+        ServiceResponseStandardized spz
+    ){
+        this.dailyIterationREPO = dailyIterationREPO;
+        this.dailyPService = dailyPService;
+        this.weeklyPService = weeklyPService;
+        this.monthlyPService = monthlyPService;
+        this.yearlyPService = yearlyPService;
+
+        this.totalPService = totalPService;
+        this.singleRegistrationService = singleRegistrationService;
+        this.spz = spz;
+    }
         // GET ALL
     @LogInterface(request_type = "Default Error Message", user = "default", http_status = "BAD REQUEST", status_message = 0)
     public ServiceResponse getAllData(HttpServletRequest request){

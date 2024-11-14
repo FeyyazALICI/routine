@@ -20,8 +20,15 @@ import jakarta.servlet.http.HttpServletRequest;
 @RequestMapping("/main")
 @RestController
 public class MainController {
+    
+    private final MainService mainService;
+
     @Autowired
-    private MainService mainService;
+    public MainController(
+        MainService mainService
+    ){
+        this.mainService = mainService;
+    }
 
     // ------------------------------------------------------------------------------------------------
     @GetMapping

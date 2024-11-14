@@ -21,11 +21,19 @@ import java.util.List;
 
 @Service
 public class YearlyPService {
-    @Autowired
-    private DailyIterationREPO dailyIterationREPO;
-    @Autowired
-    private ServiceResponseStandardized spz;
     
+    private final DailyIterationREPO dailyIterationREPO;
+    private final ServiceResponseStandardized spz;
+    
+    @Autowired
+    public YearlyPService(
+        DailyIterationREPO dailyIterationREPO,
+        ServiceResponseStandardized spz
+    ){
+        this.dailyIterationREPO = dailyIterationREPO;
+        this.spz = spz;
+    }
+
     DateConverter dateConverter = new DateConverter();
 
     public ServiceResponse artYearlyP(Long category, Long subCategory,  HttpServletRequest request){

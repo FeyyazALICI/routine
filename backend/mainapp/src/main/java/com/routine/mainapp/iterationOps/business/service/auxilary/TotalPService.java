@@ -19,11 +19,18 @@ import java.util.List;
 @Service
 public class TotalPService {
     
-    @Autowired
-    private DailyIterationREPO dailyIterationREPO;
-    @Autowired
-    private ServiceResponseStandardized spz;
+    private final DailyIterationREPO dailyIterationREPO;
+    private final ServiceResponseStandardized spz;
     
+    @Autowired
+    public TotalPService(
+        DailyIterationREPO dailyIterationREPO,
+        ServiceResponseStandardized spz
+    ){
+        this.dailyIterationREPO = dailyIterationREPO;
+        this.spz = spz;
+    }
+
     public ServiceResponse artTotalP(Long category, Long subCategory,  HttpServletRequest request){
         try{
             List<DoubleAttrDTO> dataManupulated = new ArrayList<>();

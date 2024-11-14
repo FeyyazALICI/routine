@@ -24,15 +24,24 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Service
 public class NameListService {
-    @Autowired
-    private SportRepo sportRepo;
-    @Autowired
-    private ProjectRepo projectRepo;
-    @Autowired
-    private ArtRepo artRepo;
-    @Autowired
-    private ServiceResponseStandardized spz;
     
+    private final SportRepo sportRepo;
+    private final ProjectRepo projectRepo;
+    private final ArtRepo artRepo;
+    private final ServiceResponseStandardized spz;
+    
+    @Autowired
+    public NameListService(
+        SportRepo sportRepo,
+        ProjectRepo projectRepo,
+        ArtRepo artRepo,
+        ServiceResponseStandardized spz
+    ){
+        this.sportRepo = sportRepo;
+        this.projectRepo = projectRepo;
+        this.artRepo = artRepo;
+        this.spz = spz;
+    }
 
         // Sport 
     public ServiceResponse selectDistinctSportTypes(HttpServletRequest request){

@@ -20,10 +20,18 @@ import java.util.List;
 
 @Service
 public class DailyPService {
+    
+    private final DailyIterationREPO dailyIterationREPO;
+    private final ServiceResponseStandardized spz;
+
     @Autowired
-    private DailyIterationREPO dailyIterationREPO;
-    @Autowired
-    private ServiceResponseStandardized spz;
+    public DailyPService(
+        DailyIterationREPO dailyIterationREPO,
+        ServiceResponseStandardized spz
+    ){
+        this.dailyIterationREPO = dailyIterationREPO;
+        this.spz = spz;
+    }
 
     public String dateAssign(DailyIteration data){
         DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.MM.yyyy");

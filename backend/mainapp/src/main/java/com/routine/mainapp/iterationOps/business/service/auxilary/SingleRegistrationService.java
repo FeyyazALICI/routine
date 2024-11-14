@@ -19,8 +19,15 @@ import jakarta.transaction.Transactional;
 
 @Service
 public class SingleRegistrationService {
+    
+    private final DailyIterationREPO dailyIterationREPO;
+
     @Autowired
-    private DailyIterationREPO dailyIterationREPO;
+    public SingleRegistrationService(
+        DailyIterationREPO dailyIterationREPO
+    ){
+        this.dailyIterationREPO = dailyIterationREPO;
+    }
 
     Constants constants = new Constants();
 

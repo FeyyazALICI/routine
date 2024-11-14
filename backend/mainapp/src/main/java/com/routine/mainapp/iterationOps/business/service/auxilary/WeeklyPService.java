@@ -22,11 +22,18 @@ import java.util.List;
 @Service
 public class WeeklyPService {
 
-    @Autowired
     private DailyIterationREPO dailyIterationREPO;
-    @Autowired
     private ServiceResponseStandardized spz;
     
+    @Autowired
+    public WeeklyPService(
+        DailyIterationREPO dailyIterationREPO,
+        ServiceResponseStandardized spz
+    ){
+        this.dailyIterationREPO = dailyIterationREPO;
+        this.spz = spz;
+    }
+
     DateConverter dateConverter = new DateConverter();
     public ServiceResponse artWeeklyP(Long category, Long subCategory,  HttpServletRequest request){
         try{

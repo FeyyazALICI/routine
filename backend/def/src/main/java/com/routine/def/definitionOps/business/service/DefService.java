@@ -21,15 +21,20 @@ import java.util.List;
 @Service
 public class DefService {
     
-    @Autowired
-    private LogRepo logRepo;
-    @Autowired
-    private NameListService nameListService;
+    private final LogRepo logRepo;
+    private final NameListService nameListService;
+    private final DummyJobRepo dummyJobRepo;
 
     @Autowired
-    private DummyJobRepo dummyJobRepo;
-
-
+    public DefService(
+        LogRepo logRepo,
+        NameListService nameListService,
+        DummyJobRepo dummyJobRepo
+    ){
+        this.logRepo = logRepo;
+        this.nameListService = nameListService;
+        this.dummyJobRepo = dummyJobRepo;
+    }
     // LOG ------------------------------------------------------------------------------------------------------------
     public List<Log> getAllLogs(){
         return logRepo.findAll();

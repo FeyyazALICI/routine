@@ -18,8 +18,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequestMapping("/d")   // /d->def
 public class DefController {
     
+    private final DefService defService;
+
     @Autowired
-    private DefService defService;
+    public DefController(
+        DefService defService
+    ){
+        this.defService = defService;
+    }
 
     @GetMapping("/log")
     public List<Log> getAllLogs(){
