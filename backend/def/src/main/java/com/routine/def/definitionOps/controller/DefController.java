@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.routine.def.definitionOps.service.DefService;
 import com.routine.def.common.logStandart.logEntity.Log;
 import com.routine.def.common.serviceResponse.ServiceResponse;
+import com.routine.def.definitionOps.business.service.DefService;
 
 import jakarta.servlet.http.HttpServletRequest;
 

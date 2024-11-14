@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.routine.mainapp.common.dao.TrippleAttrNumericDao;
+import com.routine.mainapp.common.dto.TrippleAttrNumericDTO;
 import com.routine.mainapp.common.serviceResponse.ServiceResponse;
-import com.routine.mainapp.iterationOps.entity.DailyIteration;
-import com.routine.mainapp.iterationOps.service.MainService;
-import com.routine.mainapp.iterationOps.service.dao.SaveSingleEntityAngularDao;
+import com.routine.mainapp.iterationOps.business.dto.SaveSingleEntityAngularDTO;
+import com.routine.mainapp.iterationOps.business.service.MainService;
+import com.routine.mainapp.iterationOps.dao.entity.DailyIteration;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -33,11 +33,11 @@ public class MainController {
         return mainService.saveList(data, request);
     }
     @PostMapping("/saveSingle")
-    public ServiceResponse saveSingle(@RequestBody SaveSingleEntityAngularDao data, HttpServletRequest request){
+    public ServiceResponse saveSingle(@RequestBody SaveSingleEntityAngularDTO data, HttpServletRequest request){
         return mainService.saveSingle(data, request);
     }
     @PostMapping("/p")
-    public ServiceResponse performance(@RequestBody TrippleAttrNumericDao data ,HttpServletRequest request){
+    public ServiceResponse performance(@RequestBody TrippleAttrNumericDTO data ,HttpServletRequest request){
         return mainService.performance(data, request);
     }
     // ------------------------------------------------------------------------------------------------
