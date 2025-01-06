@@ -12,25 +12,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ServiceResponse {
     
-	private int status_message;
-	private Timestamp record_date;
-	private String http_status;
-	private String request_type;
+	private int statusMessage;
+	private Timestamp recordDate;
+	private String httpStatus;
+	private String requestType;
 	private Object data;
 	private String user;
 
     public ServiceResponse(
-        int status_message,
-        Timestamp record_date,
-        String http_status,
-        String request_type,
+        int statusMessage,
+        Timestamp recordDate,
+        String httpStatus,
+        String requestType,
         Object data,
         String user
     ){
-        this.status_message = status_message;
-        this.record_date = record_date;
-        this.http_status = http_status;
-        this.request_type = request_type;
+        this.statusMessage = statusMessage;
+        this.recordDate = recordDate;
+        this.httpStatus = httpStatus;
+        this.requestType = requestType;
         this.data = data;
         this.user = user;
     }
